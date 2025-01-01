@@ -120,8 +120,6 @@ export default function App() {
     );
   };
 
-  console.log({ mode, notMode: !!mode, showOtpVerification });
-
   return (
     <div className='App'>
       <VStack>
