@@ -7,8 +7,6 @@ const OtpInput = ({ length, mode, onSuccessfulVerification, onReset }: OtpVerifi
   const [otpInput, setOtpInput] = useState<string[]>(Array(length).fill(''));
   const inputRefs = useRef<Array<HTMLInputElement>>([]);
 
-  console.log(length, onSuccessfulVerification);
-
   const modeText = mode === OTPVerificationModes.PHONE ? 'mobile' : 'email';
 
   useEffect(() => {
@@ -59,7 +57,6 @@ const OtpInput = ({ length, mode, onSuccessfulVerification, onReset }: OtpVerifi
       justifyContent={'space-around'}
       display={'flex'}
       flexDirection={'column'}
-      // border={' solid #e2e8f0'}
       width={300}
       height={250}
       borderRadius={10}
