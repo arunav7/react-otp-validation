@@ -8,8 +8,6 @@
     "skipLibCheck": true,
     "paths": {
       "@/*": ["./src/*"]
-      // "@/hooks": ["src/hooks/*"],
-      // "@/utils": ["src/utils/*"]
     },
 
     /* Bundler mode */
