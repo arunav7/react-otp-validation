@@ -2,14 +2,17 @@ import { useEffect, useRef, useState } from 'react';
 
 import { OTPVerificationModes, OtpVerificationProps } from '@/types';
 import { Button, Container, Flex, Input, Text } from '@chakra-ui/react';
+import { useLanguageContext } from '@/context/languageContext';
+import { useTranslation } from '@/hooks/useTranslation';
+import { LanguageModeEnum } from '@/constants';
 
 const OtpInput = ({ length, mode, onSuccessfulVerification, onReset }: OtpVerificationProps) => {
   const [otpInput, setOtpInput] = useState<string[]>(Array(length).fill(''));
   const inputRefs = useRef<Array<HTMLInputElement>>([]);
+  const { language } = useLanguageContext();
+  const { t } = useTranslation(language as LanguageModeEnum);
 
-  console.log(length, onSuccessfulVerification);
-
-  const modeText = mode === OTPVerificationModes.PHONE ? 'mobile' : 'email';
+  const modeText = mode === OTPVerificationModes.PHONE ? t('phone.otp.mode') : t('email.otp.mode');
 
   useEffect(() => {
     // focus on first input box on component mount
@@ -59,14 +62,13 @@ const OtpInput = ({ length, mode, onSuccessfulVerification, onReset }: OtpVerifi
       justifyContent={'space-around'}
       display={'flex'}
       flexDirection={'column'}
-      // border={' solid #e2e8f0'}
       width={300}
       height={250}
       borderRadius={10}
       shadow={'md'}
       shadowColor={'gray.200'}
     >
-      <Text textStyle='2xl'>Enter OTP sent to {modeText}</Text>
+      <Text textStyle='2xl'>{t('otp.sent.message', { mode: modeText })}</Text>
       <Flex
         gap={4}
         alignItems={'center'}
@@ -93,7 +95,7 @@ const OtpInput = ({ length, mode, onSuccessfulVerification, onReset }: OtpVerifi
         marginTop={4}
         onClick={onReset}
       >
-        Reset
+        {t('reset.button.text')}
       </Button>
     </Container>
   );

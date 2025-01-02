@@ -1,0 +1,19 @@
+{
+  "screen.header": "ओटीपी लॉगिन",
+  "send.otp.btn.text": "ओटीपी भेजें",
+  "verify.via.phone": "फ़ोन के माध्यम से सत्यापित करें",
+  "verify.via.email": "ईमेल के माध्यम से सत्यापित करें",
+  "enter.phone.placeholder": "फ़ोन नंबर दर्ज करें",
+  "enter.email.placeholder": "ईमेल दर्ज करें",
+  "select.language.label": "भाषा चुनें",
+  "otp.validation.fail": "गलत ओटीपी, सत्यापन विफल हुआ",
+  "otp.validation.success": "ओटीपी सफलतापूर्वक सत्यापित हुआ",
+  "phone.otp.mode": "फ़ोन",
+  "email.otp.mode": "ईमेल",
+  "reset.button.text": "रीसेट करें",
+  "otp.sent.message": "आपके {mode} पर भेजा गया ओटीपी दर्ज करें ",
+  "invalid.phoneNumber": "अमान्य फ़ोन नंबर, 10 अंक होना चाहिए",
+  "invalid.email": "अमान्य ईमेल पता",
+  "english.language": "अंग्रेज़ी",
+  "hindi.language": "हिंदी"
+}

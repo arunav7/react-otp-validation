@@ -1,0 +1,19 @@
+{
+  "screen.header": "OTP Login",
+  "send.otp.btn.text": "Send OTP",
+  "verify.via.phone": "Verify via Phone",
+  "verify.via.email": "Verify via Email",
+  "enter.phone.placeholder": "Enter Phone Number",
+  "enter.email.placeholder": "Enter Email",
+  "select.language.label": "Select Language",
+  "otp.validation.fail": "Wrong Otp, verification failed",
+  "otp.validation.success": "Otp verifed successfully",
+  "phone.otp.mode": "mobile",
+  "email.otp.mode": "email",
+  "reset.button.text": "Reset",
+  "otp.sent.message": "Enter OTP sent to your {mode}",
+  "invalid.phoneNumber": "Invalid Phone number, Must be 10 digits",
+  "invalid.email": "Invalid email address",
+  "english.language": "English",
+  "hindi.language": "Hindi"
+}
