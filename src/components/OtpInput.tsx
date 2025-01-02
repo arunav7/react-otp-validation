@@ -8,6 +8,7 @@ import { LanguageModeEnum } from '@/constants';
 
 const OtpInput = ({ length, mode, onSuccessfulVerification, onReset }: OtpVerificationProps) => {
   const [otpInput, setOtpInput] = useState<string[]>(Array(length).fill(''));
+  const [finalOtp, setFinalOtp] = useState<string>('');
   const inputRefs = useRef<Array<HTMLInputElement>>([]);
   const { language } = useLanguageContext();
   const { t } = useTranslation(language as LanguageModeEnum);
@@ -20,6 +21,12 @@ const OtpInput = ({ length, mode, onSuccessfulVerification, onReset }: OtpVerifi
       inputRefs.current[0].focus();
     }
   }, []);
+
+  useEffect(() => {
+    if (finalOtp.length === length) {
+      onSuccessfulVerification(finalOtp);
+    }
+  }, [mode, language]);
 
   const handleChange = (e: React.ChangeEvent<HTMLInputElement>, index: number) => {
     const value = e.target.value;
@@ -36,6 +43,7 @@ const OtpInput = ({ length, mode, onSuccessfulVerification, onReset }: OtpVerifi
 
     const combinedotp = newOtpInput.join('');
     if (combinedotp.length === length) {
+      setFinalOtp(combinedotp);
       onSuccessfulVerification(combinedotp);
     }
   };
