@@ -2,10 +2,11 @@ import { useEffect } from 'react';
 import { useForm } from 'react-hook-form';
 import { zodResolver } from '@hookform/resolvers/zod';
 
-import { OtpFormType, schema } from '@/utils/otp-form-schema';
+import { OtpFormType, createSchema } from '@/utils/otp-form-schema';
 import { OTPVerificationModes } from '@/types';
 
-export function useOtpForm(mode: OTPVerificationModes | null) {
+export function useOtpForm(mode: OTPVerificationModes | null, t?: any) {
+  const schema = createSchema(t);
   const {
     register,
     unregister,
